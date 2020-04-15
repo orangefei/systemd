@@ -1,0 +1,22 @@
+[Unit]
+Description=Zookeeper service
+After=network.target
+
+[Service]
+User=root
+Group=root
+SyslogIdentifier=root
+Environment=ZHOME=/usr/local/zookeeper
+ExecStart=/usr/local/jdk1.8.0_152/bin/java \
+  -Dzookeeper.log.dir=${ZHOME}/logs/zookeeper.log \
+  -Dzookeeper.root.logger=INFO,ROLLINGFILE \
+  -cp ${ZHOME}/zookeeper-3.4.14.jar:${ZHOME}/lib/* \
+  -Dlog4j.configuration=file:${ZHOME}/conf/log4j.properties \
+  -Dcom.sun.management.jmxremote \
+  -Dcom.sun.management.jmxremote.local.only=false \
+  org.apache.zookeeper.server.quorum.QuorumPeerMain \
+  ${ZHOME}/conf/zoo.cfg
+
+[Install]
+WantedBy=multi-user.target
+

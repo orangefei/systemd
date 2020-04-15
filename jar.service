@@ -1,0 +1,13 @@
+[Unit]
+Description=java
+After=network.target
+
+[Service]
+Type=forking
+ExecStart=/data/app/test.sh start
+ExecReload=/data/app/test.sh restart
+ExecStop=/data/app/test.sh stop
+#PrivateTmp=true
+User=root
+[Install]
+WantedBy=multi-user.target
