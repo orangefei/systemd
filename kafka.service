@@ -1,0 +1,15 @@
+[Unit]
+Description=Apache Kafka server (broker)
+After=network.target  zookeeper.service
+
+[Service]
+Type=simple
+Environment="PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/src/jdk1.8.0_152/bin/"
+User=root
+Group=root
+ExecStart=/usr/local/kafka/bin/kafka-server-start.sh /usr/local/kafka/config/server.properties
+ExecStop=/usr/lccal/kafa/bin/kafka-server-stop.sh
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

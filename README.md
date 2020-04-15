@@ -1,11 +1,11 @@
-# systemd ÒòÏµÍ³bug,µ¼ÖÂÏµÍ³ÍË³öÖÕ¶Ëºó·şÎñ±»Òì³£kill,Ğ´Èë×ÔÆô¶¯¿ÉÒÔ½â¾ö¡£ÒÔÏÂÎª»ã×Ü
-java³ÌĞòÔÚcentos7ÀïÃæ¿ª»ú×ÔÆô¶¯
-1.ÎÒÃÇÏÈÀ´¸ö¼òµ¥µÄstart,status,stop³ÌĞò
+# systemd å› ç³»ç»Ÿbug,å¯¼è‡´ç³»ç»Ÿé€€å‡ºç»ˆç«¯åæœåŠ¡è¢«å¼‚å¸¸kill,å†™å…¥è‡ªå¯åŠ¨å¯ä»¥è§£å†³ã€‚ä»¥ä¸‹ä¸ºæ±‡æ€»
+javaç¨‹åºåœ¨centos7é‡Œé¢å¼€æœºè‡ªå¯åŠ¨
+1.æˆ‘ä»¬å…ˆæ¥ä¸ªç®€å•çš„start,status,stopç¨‹åº
 /data/app/jarservice.sh
-2.ÔÙĞ´¸ö·şÎñÎÄ¼ş
+2.å†å†™ä¸ªæœåŠ¡æ–‡ä»¶
  /lib/systemd/system/jar.service
-3.Æô¶¯·şÎñ
+3.å¯åŠ¨æœåŠ¡
 systemctl daemon-reload
 systemctl start jar.service
 systemctl status jar.service
-#redis zk tomcat kafka
+#redis zk tomcat kafka#
